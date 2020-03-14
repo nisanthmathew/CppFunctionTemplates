@@ -33,6 +33,14 @@ public:
         }
         return equal;
     }
+
+    template<typename T> //swap the contents in variables
+    void Tswap(T &input1, T &input2){
+        T temp{input1};
+        input1 = input2;
+        input2 = temp;
+    }
+
 };
 
 #endif // MYFUNCTIONTEMPLATECLASS_H

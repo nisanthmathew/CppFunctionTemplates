@@ -18,6 +18,7 @@ private slots:
     void integerequalcomparison();
     void MyStringequalcomparison();
     void integergreatorcomparison();
+    void swaptest();
 };
 
 FunctionTemplateTestCase::FunctionTemplateTestCase()
@@ -65,8 +66,25 @@ void FunctionTemplateTestCase::integergreatorcomparison(){
     MyFunctionTemplateClass mystringcompare;
     bool greater{false};
     greater = mystringcompare.TGreaterComparisonfunction<int,bool>(2,1);
+    QCOMPARE(greater,true);
+    greater = mystringcompare.TGreaterComparisonfunction<int,bool>(-2,1);
+    QCOMPARE(greater,false);
+}
+
+void FunctionTemplateTestCase::swaptest(){
+    MyFunctionTemplateClass swaper;
+    std::vector<std::string> va(10000,"Hello");
+    std::vector<std::string> vb(10000,"Hello2");
+    std::vector<std::string> testa{va};
+    std::vector<std::string> testb{vb};
+    swaper.Tswap(va,vb);
+    QCOMPARE(va,testb);
+    QCOMPARE(vb,testa);
+    QBENCHMARK {swaper.Tswap(va,vb);}
 
 }
+
+
 
 QTEST_APPLESS_MAIN(FunctionTemplateTestCase)
 
