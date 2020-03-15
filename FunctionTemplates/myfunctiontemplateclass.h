@@ -1,11 +1,11 @@
 #ifndef MYFUNCTIONTEMPLATECLASS_H
 #define MYFUNCTIONTEMPLATECLASS_H
-
+#include <iostream>
 
 class MyFunctionTemplateClass
 {
 public:
-    MyFunctionTemplateClass();
+     MyFunctionTemplateClass(){}
 
     template<typename T1, typename T2> //template to check equality
     T2 TEqualComparisonfunction(T1 firstinputtocompare, T1 secondinputtocompare)
@@ -40,6 +40,7 @@ public:
         input1 = input2;
         input2 = temp;
     }
+
 
 };
 

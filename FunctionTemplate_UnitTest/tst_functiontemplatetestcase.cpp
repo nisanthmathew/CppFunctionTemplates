@@ -73,8 +73,8 @@ void FunctionTemplateTestCase::integergreatorcomparison(){
 
 void FunctionTemplateTestCase::swaptest(){
     MyFunctionTemplateClass swaper;
-    std::vector<std::string> va(10000,"Hello");
-    std::vector<std::string> vb(10000,"Hello2");
+    std::vector<std::string> va(100000,"Hello");
+    std::vector<std::string> vb(100000,"Hello2");
     std::vector<std::string> testa{va};
     std::vector<std::string> testb{vb};
     swaper.Tswap(va,vb);
